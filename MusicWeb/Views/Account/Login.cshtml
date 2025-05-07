@@ -1,0 +1,94 @@
+﻿@using MusicWeb.Models
+@model LoginViewModel
+@{
+    ViewBag.Title = "Login";
+}
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-4">
+            <h2 class="text-center text-primary mb-4">Login</h2>
+            <form id="login-form" method="post" style="box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); padding: 20px; border-radius: 8px; background: #f9f9f9;">
+                <div class="form-group">
+                    <label for="username" class="form-label">Username</label>
+                    <input type="text" name="username" id="username" class="form-control" placeholder="Enter your username" required />
+                </div>
+                <div class="form-group mt-3">
+                    <label for="password" class="form-label">Password</label>
+                    <input type="password" name="password" id="password" class="form-control" placeholder="Enter your password" required />
+                </div>
+                <div id="login-error" class="text-danger mt-2" style="display: none;">Invalid username or password</div>
+                <button type="submit" class="btn btn-primary w-100 mt-4">Login</button>
+            </form>
+            <div class="text-center mt-3">
+                <small class="text-muted">Don't have an account?</small>
+                <a href="#" class="text-primary ms-1">Register</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+@section Scripts {
+    <script src="~/Scripts/custom/login.js"></script>
+}
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background: #f9f9f9;
+        color: #333;
+        margin: 0;
+        padding: 0;
+    }
+
+    h2 {
+        font-weight: bold;
+        color: #333;
+    }
+
+    .form-control {
+        width: 100%; /* Đảm bảo các trường input chiếm toàn bộ chiều rộng cột */
+        max-width: 400px; /* Tăng chiều dài tối đa của trường */
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        padding: 10px;
+        font-size: 14px;
+        margin: 0 auto; /* Căn giữa */
+    }
+
+    .form-group {
+        display: flex;
+        flex-direction: column;
+    }
+    .form-control:focus {
+        border-color: #2575fc;
+        box-shadow: 0 0 5px rgba(37, 117, 252, 0.5);
+    }
+
+    .btn-primary {
+        background: #2575fc;
+        border: none;
+        padding: 10px;
+        font-size: 16px;
+        border-radius: 4px;
+        transition: all 0.3s ease;
+    }
+
+    .btn-primary:hover {
+        background: #1a5bbb;
+    }
+
+    .text-muted {
+        font-size: 14px;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
+</style>

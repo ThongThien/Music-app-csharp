@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="~/Content/Site.css">
+</head>
+
+<body >
+    <!-- Header -->
+    <header class="d-flex justify-content-between align-items-center p-3 bg-dark text-white">
+        <div class="logo d-flex align-items-center">
+            <a href="@Url.Action("Index", "Home")">
+                <img src="https://wallpapercave.com/wp/wp9894936.jpg" alt="Spotify Logo"
+                     style="width: 50px; height: 50px; margin-right: 10px; border-radius: 50%; cursor: pointer;">
+            </a>
+            <h1>Spotify Music</h1>
+        </div>
+
+        <div class="search-bar w-50 d-flex">
+            <input id="search-input" type="text" class="form-control" placeholder="Search for songs, artists, albums...">
+            <button id="search-btn" class="btn btn-primary ms-2">Search</button>
+        </div>
+
+            @if (Session["UserId"] != null)
+            {
+                <a href="@Url.Action("Logout", "Account")" class="btn btn-danger btn-sm ms-3">Logout</a>
+            }
+        <div class="user-icon" style="cursor: pointer;" onclick="redirectToProfile()">
+            <img src="https://img.freepik.com/premium-vector/headphone-vector-illustration-headphone-logo-design_921448-801.jpg" alt="User" class="rounded-circle" style="width: 40px; height: 40px;">
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        @RenderBody()
+    </main>
+
+    @RenderSection("Scripts", required: false)
+</body>
+
+</html>
+@section Scripts {
+    <script src="~/Scripts/custom/home_64132265.js?v=@DateTime.Now.Ticks"></script>
+}

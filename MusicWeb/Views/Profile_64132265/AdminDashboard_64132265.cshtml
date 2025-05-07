@@ -1,0 +1,30 @@
+﻿@{
+    ViewBag.Title = "Admin Profile";
+}
+<head>
+    <title>Admin Management</title>
+    <link rel="stylesheet" href="~/Content/Style_admin.css" />
+</head>
+<div class="container-fluid">
+    <ul class="nav nav-tabs" id="adminTabs">
+        <li class="nav-item">
+            <a class="nav-link active" id="user-management-tab" data-bs-toggle="tab" href="#user-management">User Management</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="song-management-tab" data-bs-toggle="tab" href="#song-management">Song Management</a>
+        </li>
+    </ul>
+
+    <div class="tab-content mt-4">
+        <!-- Tab User Management -->
+        <div id="user-management" class="tab-pane fade show active">
+            <iframe src="/Users_64132265/Index" style="width: 100%; height: 500px; border: none;"></iframe>
+        </div>
+
+        <!-- Tab Song Management -->
+        <div id="song-management" class="tab-pane fade">
+            <iframe src="/Songs_64132265/Index" style="width: 100%; height: 500px; border: none;"></iframe>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,137 @@
+﻿/* Set padding to keep content from hitting the edges */
+.body-content {
+    margin-top: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+.text-danger {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+    .text-danger a {
+        color: #007bff;
+        text-decoration: none;
+    }
+
+        .text-danger a:hover {
+            text-decoration: underline;
+        }
+.list-group-item.song-item {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.btn-play-song {
+    font-size: 1.5rem;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+#song-image {
+    animation: none; /* Không xoay mặc định */
+    transition: transform 0.2s ease-in-out;
+}
+
+    #song-image.playing {
+        animation: rotate 5s linear infinite;
+    }
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.list-group-item {
+    padding: 15px 20px; /* Tăng khoảng cách trong mỗi dòng */
+    font-size: 1.1rem; /* Tăng kích thước chữ nếu cần */
+    border-bottom: 1px solid #ddd; /* Tùy chọn thêm đường viền nếu cần */
+}
+
+#songs-list .list-group-item {
+    padding: 15px 20px;
+    font-size: 1.1rem;
+    border-bottom: 1px solid #ddd;
+}
+
+.card {
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+}
+
+.card-title {
+    font-weight: bold;
+}
+
+.list-group-item {
+    border: none;
+    font-size: 1.1rem;
+}
+
+.text-info {
+    font-weight: bold;
+}
+
+.text-success {
+    font-weight: bold;
+}
+
+.bi-award-fill {
+    color: gold;
+}
+.table {
+    text-align: center;
+}
+
+.nav-tabs .nav-link.active {
+    background-color: #f8f9fa;
+    font-weight: bold;
+    border-bottom: 2px solid #007bff;
+}
+
+.nav-tabs .nav-link {
+    color: #007bff;
+}
+
+h4 {
+    margin-top: 20px;
+    font-weight: bold;
+}
+.player-bar {
+    background: linear-gradient(45deg, #1a1a1a, #333);
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.player-controls button {
+    transition: all 0.3s ease;
+}
+
+    .player-controls button:hover {
+        background-color: #555;
+        transform: scale(1.1);
+    }
+
+audio {
+    outline: none;
+}

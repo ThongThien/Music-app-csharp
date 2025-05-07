@@ -1,0 +1,42 @@
+﻿@model IEnumerable<MusicWeb.Models.Song>
+
+@{
+    ViewBag.Title = "Song Management";
+    Layout = null;
+}
+
+<h2>Song Management</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create", null, new { @class = "btn btn-success" })
+    <link rel="stylesheet" href="~/Content/Style_admin.css" />
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>SongName</th>
+            <th>FilePath</th>
+            <th>ImagePath</th>
+            <th>AlbumName</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.SongName</td>
+                <td title="@item.FilePath">@item.FilePath</td>
+                <td title="@item.ImagePath">@item.ImagePath</td>
+                <td>@item.Album?.AlbumName ?? "No Album"</td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.SongId }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.SongId }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.SongId })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
